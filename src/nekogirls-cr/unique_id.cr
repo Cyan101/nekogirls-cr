@@ -12,5 +12,5 @@ def to_s52(input)
 end
 
 def unique_id
-  return to_s52(Time.now.epoch_ms)
+  to_s52(Time.now.epoch_ms)
 end
