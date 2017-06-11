@@ -12,7 +12,10 @@ TODO: Write usage instructions here
 
 ## Development
 
-TODO: Write development instructions here
+* Add config system to allow easy changing of directories/ports
+* Add installation, usage and a description to README
+* Add a file extension checking system
+* (Personal) Convert https://Nekogirls.moe to the crystal system (Make frontpage)
 
 ## Contributing
 
