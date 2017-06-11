@@ -1,6 +1,6 @@
 require "./nekogirls-cr/*"
 require "kemal"
-Kemal.config.port = 8080_i32
+Kemal.config.port = 8080
 
 
 module Nekogirls
