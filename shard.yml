@@ -6,7 +6,7 @@ authors:
 
 targets:
   nekogirls-cr:
-    main: src/nekogirls-cr.cr
+    main: src/nekogirls.cr
 
 crystal: 0.22.0
 

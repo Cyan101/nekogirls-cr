@@ -1,3 +1,3 @@
-module Nekogirls::Cr
+module Nekogirls
   VERSION = "0.1.0"
 end
