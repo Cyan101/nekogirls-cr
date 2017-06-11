@@ -19,7 +19,7 @@ module Nekogirls
     file_ext = File.extname(filename)
     # Be sure to check if file.filename is not empty otherwise it'll raise a compile time error
     if !filename.is_a?(String)
-      p "No filename included in upload"
+      env.response.status_code = 400
     else
       newfilename = unique_id + file_ext
       file_path = "./src/public/p/#{newfilename}"
@@ -28,6 +28,10 @@ module Nekogirls
       end
       env.redirect "/p/#{newfilename}"
     end
+  end
+
+  error 403 do
+    "Error with the filename"
   end
 
   Kemal.run
