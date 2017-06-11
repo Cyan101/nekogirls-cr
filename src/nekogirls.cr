@@ -13,6 +13,22 @@ module Nekogirls
     render "src/views/form.ecr"
   end
 
+  post "/upload" do |env|
+    file = env.params.files["file_to_upload"]
+    filename = file.filename.as(String)
+    file_ext = File.extname(filename)
+    # Be sure to check if file.filename is not empty otherwise it'll raise a compile time error
+    if !filename.is_a?(String)
+      p "No filename included in upload"
+    else
+      newfilename = unique_id + file_ext
+      file_path = "./src/public/p/#{newfilename}"
+      File.open(file_path, "w") do |f|
+        IO.copy(file.tmpfile, f)
+      end
+      env.redirect "/p/#{newfilename}"
+    end
+  end
 
   Kemal.run
 end
