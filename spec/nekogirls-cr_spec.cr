@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Nekogirls::Cr do
+describe Nekogirls do
   # TODO: Write tests
 
   it "works" do

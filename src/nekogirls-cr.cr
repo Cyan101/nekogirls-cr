@@ -1,5 +1,5 @@
 require "./nekogirls-cr/*"
 
-module Nekogirls::Cr
+module Nekogirls
   # TODO Put your code here
 end
