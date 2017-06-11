@@ -1,5 +1,6 @@
 require "./nekogirls-cr/*"
 require "kemal"
+Kemal.config.port = 8080_i32
 
 
 module Nekogirls
@@ -7,6 +8,11 @@ module Nekogirls
   get "/" do
     "Hello World"
   end
+
+  get "/upload" do
+    render "src/views/form.ecr"
+  end
+
 
   Kemal.run
 end
