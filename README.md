@@ -22,6 +22,8 @@ From the Repo
 ## Development List
 
 * Add config system to allow easy changing of directories/ports
+* Add code comments
+* Add a compiled version
 * Add a file extension checking system
 * (Personal) Convert https://Nekogirls.moe to the crystal system (Make frontpage)
 
