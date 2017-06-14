@@ -38,5 +38,6 @@ module Nekogirls
     "Filetype is banned"
   end
 
+  puts "Booting! Vers." + VERSION
   Kemal.run
 end
