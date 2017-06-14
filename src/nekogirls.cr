@@ -24,7 +24,6 @@ module Nekogirls
         IO.copy(file.tmpfile, f)
       end
       env.redirect "/p/#{newfilename}"
-    end
   end
 
   error 403 do
