@@ -27,7 +27,7 @@ module Nekogirls
     env.response.status_code = 406 if file_ext = File.extname(filename)
     next if banned_ext.includes?(file_ext)
       newfilename = unique_id + file_ext
-      file_path = "./src/public/#{save_folder}/#{newfilename}"
+      file_path = "./public/#{save_folder}/#{newfilename}"
       File.open(file_path, "w") do |f|
         IO.copy(file.tmpfile, f)
       end
