@@ -60,7 +60,8 @@ Uploading with ShareX (Example)
     "code": "SpecialCodeGoesHere"
   },
   "ResponseType": "RedirectionURL"
-}```
+}
+```
 3. Set the upload types at the bottom
 
 ## Development List
