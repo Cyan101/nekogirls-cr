@@ -14,14 +14,59 @@ From the compiled release
 
 * TODO
 
+Using Nginx for file serving/ssl (Example)
+```
+server {
+        listen 80;
+        expires 30d;
+        client_max_body_size 20m;
+        server_name nekogirls.moe;
+        root /root/nekogirls-rb/public;
+        access_log /var/log/nginx/nekogirls-rb-access.log;
+        error_log /var/log/nginx/nekogirls-rb-error.log;
+        location /pictures/ {
+                try_files $uri $uri/ =404;
+        }
+        location /css/ {
+                try_files $uri $uri/ =404;
+        }
+        location /js/ {
+                try_files $uri $uri/ =404;
+        }
+        location / {
+                proxy_pass http://localhost:8080;
+        }
+}
+```
+1. This uses Nginx to serve pictures/css/js and then passes anything else onto nekogirls-cr
+2. `client_max_body_size 20m;` limits the filesize to 20mb for uploads
+2. (Optional) Setup SSL/HTTPS using [this guide](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04)
+
 ## Usage
 
 From the Repo
 1. Run `crystal src/nekogirls.cr`, alternatively use a proccess manager like [PM2](http://pm2.keymetrics.io/) to run it in the background
 
+Uploading with ShareX (Example)
+1. Open ShareX and go to uploaders -> custom uploaders -> import -> from clipboard
+2. Copy/Paste the following code
+```
+{
+  "Name": "nekogirls.moe",
+  "RequestType": "POST",
+  "RequestURL": "https://nekogirls.moe/upload",
+  "FileFormName": "file_to_upload",
+  "Arguments": {
+    "code": "SpecialCodeGoesHere"
+  },
+  "ResponseType": "RedirectionURL"
+}```
+3. Set the upload types at the bottom
+
 ## Development List
 
 * Add code comments
+* Add "secret" code to limit who can upload
 * (Personal) Convert https://Nekogirls.moe to the crystal system (Make frontpage)
 
 ## Contributing
