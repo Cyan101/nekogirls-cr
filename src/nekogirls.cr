@@ -6,7 +6,7 @@ require "./nekogirls-cr/*"
 Config = YAML.parse(File.read("config.yaml"))
 
 Kemal.config.port = Config["port"].as_s.to_i32
-Kemal.config.public_folder = "./src/public/"
+Kemal.config.public_folder = "./public/"
 Kemal.config.host_binding = "localhost"
 
 module Nekogirls
