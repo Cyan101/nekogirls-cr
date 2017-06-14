@@ -24,8 +24,8 @@ module Nekogirls
   post "/upload" do |env|
     file = env.params.files["file_to_upload"]
     filename = file.filename.as(String)
-    env.response.status_code = 406 if file_ext = File.extname(filename)
-    next if banned_ext.includes?(file_ext)
+    file_ext = File.extname(filename)
+    env.response.status_code = 406 if banned_ext.includes?(file_ext)
       newfilename = unique_id + file_ext
       file_path = "./public/#{save_folder}/#{newfilename}"
       File.open(file_path, "w") do |f|
