@@ -68,7 +68,6 @@ Uploading with ShareX (Example)
 
 * Add code comments
 * Add "secret" code to limit who can upload
-* (Personal) Convert https://Nekogirls.moe to the crystal system (Make frontpage)
 
 ## Contributing
 
