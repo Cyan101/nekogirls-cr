@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link charset='utf-8' href='css/style.css' rel='stylesheet' type='text/css'>
+    <link charset='utf-8' href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <meta content='Kawaii invite-only image hosting site' name='description'>
+    <title>Nekogirls.moe!</title>
+    <meta content="Cyan101's Personal image-host" property='og:description'>
+    <meta content='Kawaii image hosting' property='og:title'>
+    <meta content='https://nekogirls.moe' property='og:url'>
+    <meta content='catgirls/<%=Dir.entries("./public/catgirls/").sort[2..-1].sample%>' property='og:image'>
+    <meta content='Nekogirls.moe' property='og:site_name'>
+    <link href='css/favicon.jpg' rel='icon' type='image/jpg'>
+  </head>
+  <body>
+    <h1>Nekogirls.moe!</h1>
+    <h2>Cyan101's personal image hosting website</h2>
+    <p id='stats'>
+      There are currently <%=amount%> files uploaded
+      |
+      <%=spacefree%>GB remaining
+    </p>
+    <br>
+    <img height='500px' id='midimage' src='catgirls/<%=Dir.entries("./public/catgirls/").sort[2..-1].sample%>'>
+    <p id='bottom'>
+      Find the source code
+      <a href='http://github.com/cyan101/nekogirls-cr' target='_blank'>here</a>
+    </p>
+  </body>
+</html>

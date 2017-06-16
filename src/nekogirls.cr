@@ -14,7 +14,7 @@ module Nekogirls
   banned_ext = Config["banned_ext"].as_a
 
   get "/" do
-    "Hello World"
+    render "./src/views/frontpage.ecr"
   end
 
   get "/upload" do
